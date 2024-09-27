@@ -18,7 +18,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)  // Adiciona a extensão do Mockito
+@ExtendWith(MockitoExtension.class)
 public class CommentControllerTest {
 
     @Mock
@@ -37,38 +37,6 @@ public class CommentControllerTest {
         comment.setId(1L);
         comment.setComment("Test Comment");
     }
-
-//    @Test
-//    void testGetAll_Success() {
-//        List<Comment> comments = new ArrayList<>();
-//        comments.add(comment);
-//        when(service.getAll()).thenReturn(comments);
-//
-//        ResponseEntity<List<Comment>> response = controller.getAll();
-//
-//        assertEquals(200, response.getStatusCodeValue());
-//        assertEquals(1, response.getBody().size());
-//        assertEquals(comment.getId(), response.getBody().get(0).getId());
-//    }
-
-//    @Test
-//    void testGetById_Success() {
-//        when(service.getById(1L)).thenReturn(comment);
-//
-//        ResponseEntity<Comment> response = controller.getById(1L);
-//
-//        assertEquals(200, response.getStatusCodeValue());
-//        assertEquals(comment.getId(), response.getBody().getId());
-//    }
-
-//    @Test
-//    void testGetById_NotFound() {
-//        when(service.getById(1L)).thenThrow(new IllegalArgumentException("Comment not found"));
-//
-//        ResponseEntity<Comment> response = controller.getById(1L);
-//
-//        assertEquals(404, response.getStatusCodeValue());
-//    }
 
     @Test
     void testSave_Success() {
@@ -93,17 +61,4 @@ public class CommentControllerTest {
         assertEquals(200, response.getStatusCodeValue());
         assertEquals("Deletado com sucesso!", response.getBody());
     }
-
-//    @Test
-//    void testGetCommentsByPostId_Success() {
-//        List<Comment> comments = new ArrayList<>();
-//        comments.add(comment);
-//        when(service.getCommentsByPostId(1L)).thenReturn(comments);
-//
-//        ResponseEntity<List<Comment>> response = controller.getCommentsByPostId(1L);
-//
-//        assertEquals(200, response.getStatusCodeValue());
-//        assertEquals(1, response.getBody().size());
-//        assertEquals(comment.getId(), response.getBody().get(0).getId());
-//    }
 }
